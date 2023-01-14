@@ -23,7 +23,8 @@ class LabelLoop():
         #that changes the third one. 
 
         for i in range (3):
-            firstLabelList[i]=Label(window, text=f"label {i}").grid(row=x, column=y) 
+            firstLabelList[i]=Label(window, text=f"label {i}")
+            firstLabelList[i].grid(row=x, column=y) 
             x+=1
 
         def on_click():
@@ -38,3 +39,5 @@ class LabelLoop():
 
 
         window.mainloop()
+
+LabelLoop()
