@@ -62,7 +62,15 @@ class gameBoard():
 
     def processFire(self):
         xValue = self.formatX(self.Xentry.get())
+        if xValue is None:
+            self.testVar.set('Bad x value')
+            return
         yValue =self.formatY(self.Yentry.get())
+        if yValue is None:
+            self.testVar.set('Bad y value')
+            return
+
+
         xValue=int()
         yValue=int()
         #self.testVar.set(self.formatX(xValue))
