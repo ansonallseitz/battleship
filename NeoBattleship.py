@@ -63,12 +63,15 @@ class gameBoard():
     def processFire(self):
         xValue = self.formatX(self.Xentry.get())
         yValue =self.formatY(self.Yentry.get())
+        #xValue=int()
+        #yValue=int()
         #self.testVar.set(self.formatX(xValue))
         #self.testVar.set(self.formatY(xValue))
         firedCoord = self.shipPlacementlist[xValue][yValue]
 
 
-        self.testVar.set(firedCoord)
+
+        self.testVar.set(xValue)
 
 
     #validate the input    

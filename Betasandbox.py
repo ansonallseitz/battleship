@@ -1,19 +1,17 @@
+e = 'empty'
+s = 'ship'
+
+shipPlacementlist = [[e, e, e, e, e, e, e, e, e, e],
+                                 [e, s, s, s, e, e, e, s, e, e],
+                                 [e, e, e, e, e, s, e, s, e, e],
+                                 [e, s, e, e, e, s, e, s, e, e],
+                                 [e, e, e, e, e, e, e, s, e, e],
+                                 [e, e, e, e, e, s, e, s, e, e],
+                                 [e, e, e, e, e, e, e, e, e, e],
+                                 [e, e, e, s, s, s, s, e, e, e],
+                                 [e, e, e, e, e, e, e, e, e, e],
+                                 [s, s, e, e, e, e, e, e, e, e]]
 
 
-squares=[]
-for i in range(1, 101):
-    squares.append(i**2)
-
-print(squares)
-
-
-squares2 = [i**2 for i in range(1, 101)]
-
-remainders5 = [x**2 for x in range(1,101)]
-
-movies = ["The Shawshank Redemption", "The Godfather", "Pulp Fiction", "Inception", "The Lord of the Rings", "Ghostbusters"]
-
-
-gmovies = [title for title in movies if title.startswith("G")]
-
-print(gmovies)
+slice = shipPlacementlist[9][0]
+print (slice)
