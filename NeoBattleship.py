@@ -62,9 +62,17 @@ class gameBoard():
     def processFire(self):
             xValue = self.Xentry.get()
             yValue =self.Yentry.get()
+          
+
+            self.testVar.set(formatX(xValue))
+            
     
-    def formatX(x)
-        if x 
+    def formatX(x):
+      if x.isdigit():
+        x=int(x)
+        if 1 <= x <= 10: 
+            return x-1
+        #if is_integer(x) = True and x in CorrectRange
 
 gameBoard()
 
