@@ -34,16 +34,16 @@ class gameBoard():
         s = 'ship'
         #define ship placement. 
 
-        shipPlacementlist = [[e, e, e, e, e, e, e, e, e, e],
-                             [e, s, s, s, e, e, e, s, e, e],
-                             [e, e, e, e, e, s, e, s, e, e],
-                             [e, s, e, e, e, s, e, s, e, e],
-                             [e, e, e, e, e, e, e, s, e, e],
-                             [e, e, e, e, e, s, e, s, e, e],
-                             [e, e, e, e, e, e, e, e, e, e],
-                             [e, e, e, s, s, s, s, e, e, e],
-                             [e, e, e, e, e, e, e, e, e, e],
-                             [s, s, e, e, e, e, e, e, e, e]]
+        self.shipPlacementlist = [[e, e, e, e, e, e, e, e, e, e],
+                                 [e, s, s, s, e, e, e, s, e, e],
+                                 [e, e, e, e, e, s, e, s, e, e],
+                                 [e, s, e, e, e, s, e, s, e, e],
+                                 [e, e, e, e, e, e, e, s, e, e],
+                                 [e, e, e, e, e, s, e, s, e, e],
+                                 [e, e, e, e, e, e, e, e, e, e],
+                                 [e, e, e, s, s, s, s, e, e, e],
+                                 [e, e, e, e, e, e, e, e, e, e],
+                                 [s, s, e, e, e, e, e, e, e, e]]
 
         #logic to build the matrix of lables 10x10
         y=0
@@ -56,15 +56,21 @@ class gameBoard():
                 x+=1
             y+=1
             
+        
 
         window.mainloop()
 
     def processFire(self):
-        xValue = self.Xentry.get()
-        yValue =self.Yentry.get() 
+        xValue = self.formatX(self.Xentry.get())
+        yValue =self.formatY(self.Yentry.get())
         #self.testVar.set(self.formatX(xValue))
-        self.testVar.set(self.formatY(xValue))
-            
+        #self.testVar.set(self.formatY(xValue))
+        firedCoord = self.shipPlacementlist[xValue][yValue]
+
+
+        self.testVar.set(firedCoord)
+
+
     #validate the input    
     def formatX(self, x):
       if x.isdigit():
