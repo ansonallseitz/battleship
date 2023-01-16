@@ -60,19 +60,26 @@ class gameBoard():
         window.mainloop()
 
     def processFire(self):
-            xValue = self.Xentry.get()
-            yValue =self.Yentry.get()
-          
-
-            self.testVar.set(formatX(xValue))
+        xValue = self.Xentry.get()
+        yValue =self.Yentry.get() 
+        #self.testVar.set(self.formatX(xValue))
+        self.testVar.set(self.formatY(xValue))
             
-    
-    def formatX(x):
+    #validate the input    
+    def formatX(self, x):
       if x.isdigit():
         x=int(x)
         if 1 <= x <= 10: 
             return x-1
-        #if is_integer(x) = True and x in CorrectRange
+
+    #eventually this will be modified to validate A - J
+    def formatY(self, y):
+      if y.isdigit():
+        y=int(y)
+        if 1 <= y <= 10: 
+            return y-1
+                    
+
 
 gameBoard()
 
