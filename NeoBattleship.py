@@ -15,14 +15,35 @@ class gameBoard():
 
         #create a 10x10 list for the labels 
         lableList = [[0 for colums in range(10)]for rows in range(10)]
-
+        
+        #set up the frame, the entries and the button
         BattleFrame=Frame(window, highlightbackground='blue', highlightthickness="2")
         BattleFrame.grid(row =4, column=5)
+        self.Xentry=StringVar()
         Enterx = Entry(window).grid(row=3, column=9)
         Labelx = Label(window, text=" Please enter the x").grid(row=3, column=8)
-        Entery = Entry(window).grid(row=4, column=9)
-        Labely = Label(window, text=" Please enter the y").grid(row=4, column=8)
-        fireButton = Button(window, text="fire").grid(row=6, column=8)
+        self.Yentry=StringVar()
+        Entery = Entry(window, textvariable=self.Xentry).grid(row=4, column=9)
+        Labely = Label(window, text="Please enter the y").grid(row=4, column=8)
+        self.testVar=StringVar()
+        TestEntry = Entry(window, textvariable=self.testVar).grid(row=1, column=1)
+        Firebutton = Button(window, text="fire", command=self.processFire).grid(row=5, column=10)
+
+        #define placeholder variables
+        e = 'empty'
+        s = 'ship'
+        #define ship placement. 
+
+        shipPlacementlist = [[e, e, e, e, e, e, e, e, e, e],
+                             [e, s, s, s, e, e, e, s, e, e],
+                             [e, e, e, e, e, s, e, s, e, e],
+                             [e, s, e, e, e, s, e, s, e, e],
+                             [e, e, e, e, e, e, e, s, e, e],
+                             [e, e, e, e, e, s, e, s, e, e],
+                             [e, e, e, e, e, e, e, e, e, e],
+                             [e, e, e, s, s, s, s, e, e, e],
+                             [e, e, e, e, e, e, e, e, e, e],
+                             [s, s, e, e, e, e, e, e, e, e]]
 
         #logic to build the matrix of lables 10x10
         y=0
@@ -35,12 +56,13 @@ class gameBoard():
                 x+=1
             y+=1
             
-        
-      
-
-
-
 
         window.mainloop()
+
+    def processFire(self):
+            xValue = self.Xentry.get()
+            #yValue =self.Yentry.get()
+            self.testVar.set(xValue)
+
 gameBoard()
 
