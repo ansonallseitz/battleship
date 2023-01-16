@@ -61,8 +61,10 @@ class gameBoard():
 
     def processFire(self):
             xValue = self.Xentry.get()
-            #yValue =self.Yentry.get()
-            self.testVar.set(xValue)
+            yValue =self.Yentry.get()
+    
+    def formatX(x)
+        if x 
 
 gameBoard()
 
