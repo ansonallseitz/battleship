@@ -20,10 +20,10 @@ class gameBoard():
         BattleFrame=Frame(window, highlightbackground='blue', highlightthickness="2")
         BattleFrame.grid(row =4, column=5)
         self.Xentry=StringVar()
-        Enterx = Entry(window).grid(row=3, column=9)
+        Enterx = Entry(window, textvariable=self.Xentry).grid(row=3, column=9)
         Labelx = Label(window, text=" Please enter the x").grid(row=3, column=8)
         self.Yentry=StringVar()
-        Entery = Entry(window, textvariable=self.Xentry).grid(row=4, column=9)
+        Entery = Entry(window, textvariable=self.Yentry).grid(row=4, column=9)
         Labely = Label(window, text="Please enter the y").grid(row=4, column=8)
         self.testVar=StringVar()
         TestEntry = Entry(window, textvariable=self.testVar).grid(row=1, column=1)
@@ -62,14 +62,13 @@ class gameBoard():
 
     def processFire(self):
         xValue = self.formatX(self.Xentry.get())
-        if xValue is None:
-            self.testVar.set('Bad x value')
-            return
+        #if xValue is None:
+         #   self.testVar.set(f'Bad x value: {repr(self.Xentry().get())}')
+          #  return
         yValue =self.formatY(self.Yentry.get())
-        if yValue is None:
-            self.testVar.set('Bad y value')
-            return
-
+        #if yValue is None:
+         #   self.testVar.set(f'Bad y value: {repr(self.Yentry.get())}')
+          #  return
 
         xValue=int()
         yValue=int()
@@ -79,7 +78,7 @@ class gameBoard():
 
 
 
-        self.testVar.set(xValue)
+        self.testVar.set(self.Xentry)
 
 
     #validate the input    
