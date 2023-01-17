@@ -62,23 +62,24 @@ class gameBoard():
 
     def processFire(self):
         xValue = self.formatX(self.Xentry.get())
-        #if xValue is None:
-         #   self.testVar.set(f'Bad x value: {repr(self.Xentry().get())}')
-          #  return
+        if xValue is None:
+            self.testVar.set(f'Bad x value: {repr(self.Xentry().get())}')
+            return
         yValue =self.formatY(self.Yentry.get())
-        #if yValue is None:
-         #   self.testVar.set(f'Bad y value: {repr(self.Yentry.get())}')
-          #  return
+        if yValue is None:
+            self.testVar.set(f'Bad y value: {repr(self.Yentry.get())}')
+            return
 
-        xValue=int()
-        yValue=int()
+      
         #self.testVar.set(self.formatX(xValue))
         #self.testVar.set(self.formatY(xValue))
         firedCoord = self.shipPlacementlist[xValue][yValue]
 
+        #if firedCoord= 
 
 
-        self.testVar.set(self.Xentry)
+
+        #self.testVar.set(firedCoord)
 
 
     #validate the input    
