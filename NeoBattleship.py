@@ -14,7 +14,7 @@ class gameBoard():
         window.rowconfigure((1,2,3,4,5,6,7,8,9,10), weight=1)
 
         #create a 10x10 list for the labels 
-        lableList = [[0 for colums in range(10)]for rows in range(10)]
+        self.lableList = [[0 for colums in range(10)]for rows in range(10)]
         
         #set up the frame, the entries and the button
         BattleFrame=Frame(window, highlightbackground='blue', highlightthickness="2")
@@ -51,8 +51,8 @@ class gameBoard():
         for a in range(10):
             x=0
             for b in range(10):
-                lableList[b]=Label(BattleFrame, text=f" {x}_{y} ", borderwidth=1, relief='solid')
-                lableList[b].grid(row=a, column=b)
+                self.lableList[b]=Label(BattleFrame, text=f" {x}_{y} ", borderwidth=1, relief='solid')
+                self.lableList[b].grid(row=a, column=b)
                 x+=1
             y+=1
             
@@ -73,13 +73,14 @@ class gameBoard():
       
         #self.testVar.set(self.formatX(xValue))
         #self.testVar.set(self.formatY(xValue))
-        firedCoord = self.shipPlacementlist[xValue][yValue]
+        firedCoord = self.shipPlacementlist[yValue][xValue]
+       # self.lableList[yValue][xValue]['text'] = "X"
 
         #if firedCoord= 
 
 
 
-        #self.testVar.set(firedCoord)
+        self.testVar.set(firedCoord)
 
 
     #validate the input    
